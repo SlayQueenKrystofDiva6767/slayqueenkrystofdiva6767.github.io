@@ -10,9 +10,31 @@
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
+           @keyframes flyAcross {
+            0% {
+                transform: translateX(-120vw) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(120vw) scale(0.5);
+                opacity: 0;
+            }
+        }
 
         img {
             animation: hop 2s infinite;
+        }
+          .flying {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            animation: flyAcross 3s ease-out forwards;
+            z-index: 9999;
+            animation-iteration-count: 1;
         }
 
         button {
@@ -39,6 +61,7 @@
     <p>Diva down 67.</p>
 
     <img src="obrazek.jpg" alt="Můj obrázek" width="600">
+    <img src="pork.png" alt="Letící obrázek" class="flying" width="400">
     
     <br><br>
 
